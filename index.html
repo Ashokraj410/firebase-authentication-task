@@ -1,40 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <script type="module" src="firebaseauth.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link rel="stylesheet" href="style.css">
 </head>
-<body> 
-  <div class="container">
+<body>
+  <div class="container" id="auth">
     <div class="image">
-      <img src="image/cricket .jpeg" alt="">
+      <img src="image/cricket-3.png" alt="">
     </div>
-    <div id="auth">
+    <div id="details">
       <h2>Cricket Pulse</h2>
-      <form>
-        <label for="email">Email</label>
-        <input type="text" id="email" placeholder="enter your email">
-        <label for="password">password</label>
+      <div class="del-1">
+        <label for="name">Username</label>
+        <input type="text" id="username" placeholder="create username">
+      </div>
+      <div class="del-2">
+        <label for="name">Email</label>
+        <input type="email" id="email" placeholder="create email">
+      </div>
+      <div class="del-3">
+        <label for="name">password</label>
         <input type="password" id="password" placeholder="enter your password">
-        <div class="btn">
-          <button id="signInButton">sign in</button>
-          <button id="signUpButton">sign up</button>
-        </div>
-        <div class="forgot">
-          <button id="forgot"><a href="forgot.html">forgot password</a></button>
-        </div>
-      </form>
+      </div>
+      <div class="del-4">
+        <button id="signInButton">Sign In</button>
+        <button id="signUpButton">sign Up</button>
+      </div>
+      <div class="forgot">
+        <a href="">forgot password</a>
+      </div>    
     </div>
   </div>
-  
-    
-    
 
 
-  <script type="module">
+
+
+
+<script type="module">
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
   import { 
@@ -43,8 +48,8 @@
         signInWithEmailAndPassword,
         onAuthStateChanged,
         signOut
-           
-   } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
+
+  } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -69,7 +74,7 @@
   const authForm=document.getElementById("auth")
   const signInButton=document.getElementById("signInButton")
   const signUpButton=document.getElementById("signUpButton")
-  
+
 
   const userSignUp=async()=>{
     const email=userEmail.value;
@@ -106,7 +111,6 @@
       e.preventDefault();
       userSignIn();
      });
-    
-</script>
+     </script>
 </body>
 </html>
