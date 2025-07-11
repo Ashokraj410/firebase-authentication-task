@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    width: 100%;
+    background-color: #fff;
+}
+header{
+    display: flex;
+    height: 100px;
+    background-color: skyblue;
+    justify-content: space-between;
+    align-items: center;
+}
+header span{
+    color: red;
+    font-size: 40px;
+}
+ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+li{
+    padding-left: 20px;
+    margin-left: 20px;
+}
+.navbar{
+    margin-right: 50px;
+}
+.logo{
+    margin-left: 50px;
+    align-items: center;
+    text-align: center;
+}
+.navbar ul li a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 400;
+    color: orangered;
+}
+
+tbody tr:nth-child(even){
+    background-color: #ddd;
+}
+tbody tr:nth-child(add){
+    background-color: #ffffFF;
+}
+#Home{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: #ddd;
+
+}
+.container{
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    margin: 5px 20px 40px 50px;
+}
+form input{
+    width: 80%;
+    margin:10px;
+    height: 35px;
+    background-color: #ddd;
+    border: none;
+    padding-inline-start: 10px;
+    font-size: 17px;
+}
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button{
+	-webkit-appearance:none;
+}
+.row{
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+form button{
+    width: 40%;
+    height: 30px;
+    margin-top: 20px;
+    border-radius: 8px;
+    align-self: center;
+    font-size: 17px;
+    cursor: pointer;
+    margin-right: 150px;
+}
+span{
+    color: red;
+}
