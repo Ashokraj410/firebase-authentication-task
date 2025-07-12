@@ -11,27 +11,137 @@
     <header>
         <h1>Customer Details</h1>
     </header>
-    <table>
+    <table id="userTable">
         <thead>
-            <tr>NAME</tr>
-            <tr>AGE</tr>
-            <tr>PHONENUMBER</tr>
-            <tr>CITY</tr>
-            <tr>EDIT</tr>
-            <tr>DELETE</tr>
+            <tr>
+                <th>NAME</th>
+                <th>AGE</th>
+                <th>PHONENUMBER</th>
+                <th>CITY</th>
+                <th>EDIT</th>
+                <th>DELETE</th>
+            </tr>
         </thead>
         <tbody>
             <tr>
-                <td>ashok</td>
-                <td>27</td>
-                <td>9080228445</td>
-                <td>Devamangalam</td>
-                <td><button>Edit</button></td>
-                <td><button>Delete</button></td>
+                <td>name</td>
+                <td>name</td>
+                <td>name</td>
+                <td>name</td>
+                <td>name</td>
+                <td>name</td>
             </tr>
-
         </tbody>
     </table>
+    <section id="editfrm" style="display: none;">
+        <form action="#" id="editform">
+            <h3>Edit the Details</h3>
+            <input type="hidden" id="editId">
+            <input type="text" id="editName" placeholder="Name" required>
+            <input type="number"  id="editAge" placeholder="AGE" required>
+            <input type="number" id="editPhoneNumber" placeholder="PhoneNumber" required>
+            <input type="text" id="editCity" placeholder="City" required>
+            <div class="btn">
+                <button type="submit">Submit</button>
+                <button type="button" onclick="editCancel()">Cancel</button>
+            </div>
+    </form>
+
+    </section>
+
     
+    
+
+
+
+
+
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+        import { getDatabase,ref,onValue,remove,update} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-database.js";
+
+//API keys added
+    const firebaseConfig = {
+    apiKey: "AIzaSyDOX6gaBb9B9iVJDP3JSyrEKjOZ7ij30DE",
+    authDomain: "log-in-authentication-7a152.firebaseapp.com",
+    projectId: "log-in-authentication-7a152",
+    storageBucket: "log-in-authentication-7a152.firebasestorage.app",
+    messagingSenderId: "659156202599",
+    appId: "1:659156202599:web:9d698cd651f94c35e9d0c2",
+    measurementId: "G-9PBLGX5VCY",
+    databaseURL:"https://log-in-authentication-7a152-default-rtdb.firebaseio.com/"
+  };
+
+  const app=initializeApp(firebaseConfig);
+  const db=getDatabase(app);
+  const userRef=ref(db,"users");
+
+  //data display
+  const tableBody=document.querySelector("#userTable tbody");
+  //data edit option
+  const editForm=document.querySelector("#editfrm")
+
+  onValue(userRef,snapshot =>{
+    tableBody.innerHTML="";
+    snapshot.forEach(child=>{
+        const {name,age,phoneNumber,city}=child.val();
+        const id=child.key;
+        const row=document.createElement("tr");
+        row.innerHTML=`
+        <td>${name}</td>
+        <td>${age}</td>
+        <td>${phoneNumber}</td>
+        <td>${city}</td>
+        <td> 
+        <button onclick="startEdit('${id}','${name}','${age}','${phoneNumber}','${city}')">Edit</button></td>
+        <td> <button onclick="deleteUser('${id}')">Delete</button></td>`;
+        tableBody.appendChild(row);
+    })
+  })
+      window.deleteUser=function(id){
+     remove(ref(db,`users/${id}`));
+      then(()=>alert("delete successfully")) 
+      .catch (err=>console.error(err));
+
+   }
+   window.startEdit=function(id,name,age,phoneNumber,city){
+    document.getElementById("editfrm").style.display="block";
+    document.getElementById("editName").value=name;
+    document.getElementById("editAge").value=age;
+    document.getElementById("editPhoneNumber").value=phoneNumber;
+    document.getElementById("editCity").value=city;
+    
+   };
+
+   // edit form submit
+   editForm.addEventListener("submit",e=>{
+    e.preventDefault();
+
+    const idInput=document.getElementById("editId");
+    if (!idInput || !idInput.value) {
+    return alert("No user selected for editing");
+  
+    const id = idInput.value.trim();
+    const updates={
+    name:document.getElementById("editName").value.trim(),
+    age:document.getElementById("editAge").value.trim(),
+    phoneNumber:document.getElementById("editPhoneNumber").value.trim(),
+    city:document.getElementById("editCity").value.trim(),
+    };
+
+    update(ref(db,`users/${id}`),updates)
+    then(()=>{
+        alert("changed saved!")
+        document.getElementById("editfrm").style.display = "none";
+    })
+    
+   })
+   document.querySelector('#editfrm button[type="button"]')
+  .addEventListener('click', () => {
+    document.getElementById('editfrm').style.display = 'none';
+  });
+
+    </script>
 </body>
 </html>
