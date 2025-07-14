@@ -4,7 +4,11 @@
     box-sizing: border-box;
 }
 body{
-    background-color: #ddd;
+    background: url(image/side\ 1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,6 +21,7 @@ body{
     display: flex;
     border: 2px solid blanchedalmond;
     border-radius: 20px;
+    background-color: aliceblue;
 }
 img{
     width: 96%;
@@ -31,11 +36,12 @@ img{
 }
 #details{
     width: 100%;
+    
 }
 #details h2{
     text-align: center;
     margin-top: 10px;
-    color: rgb(151, 108, 108);
+    color:goldenrod;
     font-size: 30px;
     font-weight: bolder;
 }

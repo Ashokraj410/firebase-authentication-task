@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="detail.css">
+    <script src="https://kit.fontawesome.com/3329bf17c6.js"></script>
     
 </head>
 <body>
@@ -23,16 +24,11 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>name</td>
-                <td>name</td>
-                <td>name</td>
-                <td>name</td>
-                <td>name</td>
-                <td>name</td>
-            </tr>
         </tbody>
     </table>
+    <div class="home">
+       <a href="secret.html">Home</a>
+    </div>
     <section id="editfrm" style="display: none;">
         <form action="#" id="editform">
             <h3>Edit the Details</h3>
@@ -45,7 +41,8 @@
                 <button type="submit">Submit</button>
                 <button type="button" onclick="editCancel()">Cancel</button>
             </div>
-    </form>
+         </form>
+         
 
     </section>
 
@@ -94,18 +91,19 @@
         <td>${phoneNumber}</td>
         <td>${city}</td>
         <td> 
-        <button onclick="startEdit('${id}','${name}','${age}','${phoneNumber}','${city}')">Edit</button></td>
-        <td> <button onclick="deleteUser('${id}')">Delete</button></td>`;
+        <button onclick="startEdit('${id}','${name}','${age}','${phoneNumber}','${city}')"><i class="fa-regular fa-eye"></i>Edit</button></td>
+        <td> <button class="del" onclick="deleteUser('${id}')"><i class="fa-solid fa-trash-can"></i>Delete</button></td>`;
         tableBody.appendChild(row);
     })
   })
       window.deleteUser=function(id){
-     remove(ref(db,`users/${id}`));
-      then(()=>alert("delete successfully")) 
+     remove(ref(db,`users/${id}`))
+      .then(()=>alert("delete successfully")) 
       .catch (err=>console.error(err));
 
    }
    window.startEdit=function(id,name,age,phoneNumber,city){
+    document.getElementById("editId").value=id;
     document.getElementById("editfrm").style.display="block";
     document.getElementById("editName").value=name;
     document.getElementById("editAge").value=age;
@@ -120,9 +118,13 @@
 
     const idInput=document.getElementById("editId");
     if (!idInput || !idInput.value) {
-    return alert("No user selected for editing");
+    alert("No user selected for editing");
+    return ;
+    }
+
   
-    const id = idInput.value.trim();
+    const id = idInput.value;
+
     const updates={
     name:document.getElementById("editName").value.trim(),
     age:document.getElementById("editAge").value.trim(),
@@ -131,10 +133,11 @@
     };
 
     update(ref(db,`users/${id}`),updates)
-    then(()=>{
+    .then(()=>{
         alert("changed saved!")
         document.getElementById("editfrm").style.display = "none";
     })
+    .catch(err=>console.error(err));
     
    })
    document.querySelector('#editfrm button[type="button"]')

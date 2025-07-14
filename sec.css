@@ -1,101 +1,411 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 body{
-    width: 100%;
-    width: 100%;
-    background-color: #fff;
-}
-header{
-    display: flex;
-    height: 100px;
-    background-color: skyblue;
-    justify-content: space-between;
-    align-items: center;
-}
-header span{
-    color: red;
-    font-size: 40px;
-}
-ul{
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-}
-li{
-    padding-left: 20px;
-    margin-left: 20px;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
 }
 .navbar{
-    margin-right: 50px;
+  width: 100%;
+  background-color: #ddd;
+
 }
-.logo{
-    margin-left: 50px;
-    align-items: center;
-    text-align: center;
+.navbar a{
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+
 }
-.navbar ul li a{
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: 400;
-    color: orangered;
+.navbar img{
+  width: 100px;
+  height: 100px;
+
+}
+.navbar.custom-nav {
+  background-color: #004080; 
+  padding: 0.5rem 1rem;
+}
+.navbar-nav a{
+  color: black;
+}
+.navbar.custom-nav .nav-link {
+  color:black;
+  margin: 0 0.5rem;
+  font-weight: 900;
+}
+.navbar.custom-nav .nav-link:hover,
+.navbar.custom-nav .nav-link:focus {
+  color: #ffc107; 
 }
 
-tbody tr:nth-child(even){
-    background-color: #ddd;
+
+.navbar.custom-nav .nav-item.active .nav-link {
+  color: black;
+  border-bottom: 2px solid #ffc107;
 }
-tbody tr:nth-child(add){
-    background-color: #ffffFF;
+
+.navbar-brand img {
+  width: 100x;
+  height: 80px;
+  object-fit: contain;
+  margin-right: 0.5rem;
+}
+
+
+#signout {
+  border: 1px solid #f8f9fa;
+  color: black;
+  font-size: 20px;
+  padding: 0.25rem 0.75rem;
+  background: transparent;
+  border-radius: 0.25rem;
+}
+#signout:hover {
+  background-color: black;
+  color: #f8f9fa;
+
 }
 #Home{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    background-color: #ddd;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:#ddd;
+}
+.sliders{
+  margin-top: 80px;
+  background-color: gray;
+  width: 90%;
+  justify-content: center;
+  height: 85%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.slides{
+  width: 500%;
+  display: flex;
+  height: 90%;
+
+}
+.slides input{
+  display: none;
+}
+.slide{
+  width:20%;
+  transition: 2s;
+}
+.slide img{
+  height: 500px;
+  width: 100%;
+
+} 
+.navigation-manual{
+  position: absolute;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  margin-top: 450px;
+
+}
+.manual-btn{
+  border: 2px solid skyblue;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1s;
+}
+.manual-btn:not(:last-child){
+  margin-right:40px;
+}
+.manual-btn:hover{
+  background: skyblue;
+}
+#radio1:checked~.first{
+  margin-left:0;
+}
+#radio2:checked~.first{
+  margin-left: -20%;
+}
+#radio3:checked~.first{
+  margin-left: -40%;
+}
+#radio4:checked~.first{
+  margin-left: -60%;
+}
+.navigation-auto{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  margin-top: 450px;
+}
+.navigation-auto div{
+  border: 2px solid skyblue;
+  padding: 5px;
+  border-radius: 10px;
+  transition: 1s;
+}
+.navigation-auto div:not(:last-child){
+  margin-right: 40px;
+}
+#radio1:checked~.navigation-auto .auto-btn1{
+  background: skyblue;
+}
+#radio2:checked~.navigation-auto .auto-btn2{
+  background: skyblue;
+}
+#radio3:checked~.navigation-auto .auto-btn3{
+  background: skyblue;
+}
+#radio4:checked~.navigation-auto .auto-btn4{
+  background: skyblue;
+}
+
+#Admission{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: #fff;
 
 }
 .container{
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+.container h2{
+  text-align: center;
 }
 form{
-    display: flex;
-    flex-direction: column;
-    margin: 5px 20px 40px 50px;
+  display: flex;
+  flex-direction: column;
+  margin: 5px 20px 40px 50px;
 }
 form input{
-    width: 80%;
-    margin:10px;
-    height: 35px;
-    background-color: #ddd;
-    border: none;
-    padding-inline-start: 10px;
-    font-size: 17px;
+  width: 80%;
+  margin:10px;
+  height: 35px;
+  background-color: #ddd;
+  border: none;
+  padding-inline-start: 10px;
+  font-size: 17px;
 }
 input::-webkit-inner-spin-button,
 input::-webkit-outer-spin-button{
 	-webkit-appearance:none;
 }
 .row{
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
 }
 form button{
-    width: 40%;
-    height: 30px;
-    margin-top: 20px;
-    border-radius: 8px;
-    align-self: center;
-    font-size: 17px;
-    cursor: pointer;
-    margin-right: 150px;
+  width: 40%;
+  height: 30px;
+  margin-top: 20px;
+  border-radius: 8px;
+  align-self: center;
+  font-size: 17px;
+  cursor: pointer;
+  margin-right: 150px;
+}
+#Admission .left{
+  width: 100%;
+  background-color:#fff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.left-one{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+  height: 100%;
+
+}
+.left-one .one{
+  margin-top: 20px;
+  background-color:#800020;
+  width: 200px;
+  border-radius: 50%;
+  height: 200px;
+}
+.left-one .one p{
+  color: #fff;
+}
+
+.left-one .one h4{
+  color: #ffc107;
+  margin-top: 30px;
+}
+.left-two{
+  margin-top: 50px;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+  height: 100%;
+
+}
+.left-two .one{
+  margin-top: 20px;
+  background-color: #800020;;
+  width: 200px;
+  border-radius: 50%;
+  height: 200px;
+}
+.left-two .one p{
+  color: #fff;
+}
+
+.left-two .one h4{
+  margin-top: 30px;
+  color: #ffc107;
 }
 span{
-    color: red;
+  color: red;
 }
+#Academic{
+  width: 100%;
+  background-color: #ddd;
+  height: 100%;
+}
+#Academic .boxes{
+  width: 100%;
+  display: flex;
+  background-color: #ddd;
+  justify-content: space-around;
+  height: auto;
+}
+#Academic img{
+  width: 200px;
+  height: 200px;
+}
+#Academic .box-1{
+  margin-top: 30px;
+  align-content: center;
+  height: 270px;
+  width: 250px;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+#Academic h1{
+  text-align: center;
+  padding-top: 30px;
+}
+#Academic .box-2{
+  height: 270px;
+  width: 250px;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 30px;
+  align-content: center;
+  margin-bottom: 30px;
+
+}
+#Academic .box-3{
+  margin-top: 30px;
+  align-content: center;
+  width: 250px;
+  height: 270px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 30px;
+    
+}
+#Academic .box-4{
+  margin-top: 30px;
+  align-content: center;
+  text-align: center;
+  width: 250px;
+  height: 270px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+#ForStaff{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background-color: #ffff;
+}
+#ForStaff .details{
+  width: 100%;
+  padding-left: 170px;
+  margin-top: 30px;
+}
+#ForStaff hr{
+  width: 80%;
+  border-top: 1px dotted red;
+  height: 2px;
+  margin-left: 180px;
+}
+#ForStaff .staff{
+  display: flex;
+  width: 100%;
+  margin-right: 10px;
+  background-color:#fff;
+}
+#ForStaff .staff .round{
+  width: 90%;
+  background-color: #fff;
+  text-align: center;
+}
+#ForStaff .staff .round img{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+#ForStaff .staff .info{
+  margin-left: -55px;
+  margin-right: 20px;
+}
+#ForStaff .staff .info p{
+  text-align: initial;
+
+}
+#ForStaff .staff .info h4{
+  text-align: left;
+}
+
+@media (max-width: 992px) {
+  .navbar.custom-nav .navbar-brand {
+    flex-grow: 1;
+  }
+  #signout {
+    margin-top: 0.5rem;
+  }
+  .boxes{
+    flex-direction: column;
+    align-items: center;
+  }
+  #Admission{
+    flex-direction: column;
+  }
+  .container{
+    margin: 0;
+    
+  }
+  #Academic h1{
+    text-align: center;
+    font-size: 20px;
+    padding-top: 30px;
+}
+}
+

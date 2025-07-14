@@ -12,7 +12,7 @@ header{
     width: 100%;
     height: 100px;
     text-align: center;
-    background-color: blanchedalmond;
+    background-color:#FFF;
     align-content: center;
 
 }
@@ -59,17 +59,69 @@ form input{
     justify-content: center;
 }
 table{
-    justify-content: center;
+    margin-top: 30px;
     width: 90%;
+    border-collapse: collapse;
+    border: 1px solid black;
+    justify-self: center;
 
 }
-tbody tr,td{
-    justify-content: center;
-    align-items: center;
+tbody{
+    text-align: center;
+    font-size: 17px;
+    border-collapse: collapse;
+
 }
+tbody tr{
+    height: 35px;
+}
+tbody tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+tbody tr:nth-child(add){
+    background-color: #ffffFF;
+}
+table thead {
+    background-color: rgb(59, 122, 131);
+    border:none;
+    font-size: 20px;
+    color: #f2f2f2;
+    height: 35px;
+}
+
 tbody button{
     width: 100px;
-    height: 25px;
+    height: 28px;
     color: black;
+    border: 1px solid black;
+    border-radius: 4px; ;
     font-size: 15px;
+}
+tbody button i{
+
+    padding-right:7px ;
+
+}
+tbody .del i {
+    color: rgb(250, 11, 11);
+    font-size: 18px;
+    font-weight: lighter;
+}
+tbody  i{
+    color: rgb(28, 28, 245);
+    font-size: 18px;
+    font-weight: lighter;
+}
+.home{
+    width: 100%;
+    margin-top: 40px;
+    text-align: center;
+}
+.home a{
+    text-align: center;
+    color:darkviolet;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 900;
+
 }
