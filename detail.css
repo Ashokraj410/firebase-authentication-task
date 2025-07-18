@@ -21,107 +21,156 @@ input::-webkit-outer-spin-button{
 	-webkit-appearance:none;
 }
 #editfrm{
-    margin-top: 20px;
-    width: 400px;
-    height: 350px;
-    margin-left: 50px;
-    border-radius: 20px;
-    border: 2px solid goldenrod;
-    background-color: skyblue;
-    align-items: center;
+  margin-top: 20px;
+  width: 400px;
+  height: 350px;
+  margin-left: 50px;
+  border-radius: 20px;
+  border: 2px solid goldenrod;
+  background-color: skyblue;
+  align-items: center;
 }
 form{
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    padding-top: 2px;
-    margin: 10px;
-    gap: 20px;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  padding-top: 2px;
+  margin: 10px;
+  gap: 20px;
+  text-align: center;
     
 }
 form button{
-    width: 25%;
-    height: 30px;
-    align-self: center;
-    font-size: 17px;
+  width: 25%;
+  height: 30px;
+  align-self: center;
+  font-size: 17px;
 }
 form input{
-    height: 30px;
-    padding-inline-start: 10px;
-    font-size: 16px;
-    color: black;
-    border: 1px solid;
+  height: 30px;
+  padding-inline-start: 10px;
+  font-size: 16px;
+  color: black;
+  border: 1px solid;
 }
 #editform .btn{
-    display: flex;
-    gap: 20px;
-    justify-content: center;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
 }
 table{
-    margin-top: 30px;
-    width: 90%;
-    border-collapse: collapse;
-    border: 1px solid black;
-    justify-self: center;
+  margin-top: 30px;
+  width: 90%;
+  border-collapse: collapse;
+  border: 1px solid black;
+  justify-self: center;
 
 }
 tbody{
-    text-align: center;
-    font-size: 17px;
-    border-collapse: collapse;
-
+  text-align: center;
+  font-size: 17px;
+  border-collapse: collapse;
 }
 tbody tr{
-    height: 35px;
+  height: 35px;
 }
 tbody tr:nth-child(even){
-    background-color: #f2f2f2;
+  background-color: #f2f2f2;
 }
 tbody tr:nth-child(add){
-    background-color: #ffffFF;
+  background-color: #ffffFF;
 }
 table thead {
-    background-color: rgb(59, 122, 131);
-    border:none;
-    font-size: 20px;
-    color: #f2f2f2;
-    height: 35px;
+  background-color: rgb(59, 122, 131);
+  border:none;
+  font-size: 20px;
+  color: #f2f2f2;
+  height: 35px;
 }
 
 tbody button{
-    width: 100px;
-    height: 28px;
-    color: black;
-    border: 1px solid black;
-    border-radius: 4px; ;
-    font-size: 15px;
+  width: 100px;
+  height: 28px;
+  color: black;
+  border: 1px solid black;
+  border-radius: 4px; ;
+  font-size: 15px;
 }
 tbody button i{
 
-    padding-right:7px ;
+  padding-right:7px ;
 
 }
 tbody .del i {
-    color: rgb(250, 11, 11);
-    font-size: 18px;
-    font-weight: lighter;
+  color: rgb(250, 11, 11);
+  font-size: 18px;
+  font-weight: lighter;
 }
 tbody  i{
-    color: rgb(28, 28, 245);
-    font-size: 18px;
-    font-weight: lighter;
+  color: rgb(28, 28, 245);
+  font-size: 18px;
+  font-weight: lighter;
 }
 .home{
-    width: 100%;
-    margin-top: 40px;
-    text-align: center;
+  width: 100%;
+  margin-top: 40px;
+  text-align: center;
 }
 .home a{
-    text-align: center;
-    color:darkviolet;
-    text-decoration: none;
-    font-size: 22px;
-    font-weight: 900;
+  text-align: center;
+  color:darkviolet;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 900;
+}
+.table-responsive {
+  overflow-x: auto;
+  width: 100%;
+}
 
+@media screen and (max-width: 992px) {
+  #editfrm {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  table {
+    width: 100%;
+  }
+}
+
+/* Mobile phones: up to 600px */
+@media screen and (max-width: 600px) {
+  #editfrm {
+    width: 100%;
+    margin: 10px 0;
+    height: auto;
+  }
+  
+  thead th{
+    display:block;
+    height: auto;
+    padding-bottom: 20px;
+  }
+  thead tr{
+    display: block;
+
+  }
+  tbody tr {
+    display: block;
+    height: 250px;
+    font-size: 17px;
+    
+
+  }
+  tbody td{
+    font-size: 22px;
+    padding-top: 12px;
+    display: block;
+    text-wrap: rap;
+
+}
+  tbody button {
+    width: 30%;
+  }
 }
